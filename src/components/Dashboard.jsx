@@ -4,7 +4,7 @@ import { Mail, CheckCircle, Clock } from 'lucide-react';
 export default function Dashboard({ stats }) {
     const cards = [
         {
-            title: 'Total Invited',
+            title: 'Total Guests Invited',
             value: stats.totalInvited,
             icon: <Mail className="text-primary-500" size={24} />,
             bgColor: 'bg-primary-50',

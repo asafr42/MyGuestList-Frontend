@@ -30,9 +30,19 @@ export default function SmartTable({ guests, onUpdate }) {
 
     const handleEditChange = (e) => {
         const { name, value } = e.target;
+        let updates = { [name]: name === 'invitedCount' || name === 'confirmedCount' ? Number(value) : value };
+        
+        if (name === 'status') {
+            if (value === 'Confirmed') {
+                updates.confirmedCount = editFormData.invitedCount;
+            } else if (value === 'Declined' || value === 'Pending') {
+                updates.confirmedCount = 0;
+            }
+        }
+        
         setEditFormData({
             ...editFormData,
-            [name]: name === 'invitedCount' || name === 'confirmedCount' ? Number(value) : value
+            ...updates
         });
     };
 

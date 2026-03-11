@@ -12,6 +12,8 @@ jobs:
   build-and-publish:
     name: Build & Publish Frontend to AWS ECR
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3

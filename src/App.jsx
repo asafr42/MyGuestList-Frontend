@@ -10,7 +10,7 @@ const API_URL = '/api/guests';
 
 function App() {
     const [guests, setGuests] = useState([]);
-    const [stats, setStats] = useState({ totalInvited: 0, totalConfirmed: 0 });
+    const [stats, setStats] = useState({ totalInvited: 0, totalConfirmed: 0, totalDeclined: 0 });
     const [loading, setLoading] = useState(true);
     const [token, setToken] = useState(localStorage.getItem('token') || null);
     const [userEmail, setUserEmail] = useState(localStorage.getItem('email') || '');

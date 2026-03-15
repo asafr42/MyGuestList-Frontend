@@ -6,7 +6,7 @@ import AddGuestForm from './components/AddGuestForm';
 import Login from './components/Login';
 import { Users } from 'lucide-react';
 
-const API_URL = '/api/guests';
+const API_URL = import.meta.env.VITE_API_URL || '/api/guests';
 
 function App() {
     const [guests, setGuests] = useState([]);
